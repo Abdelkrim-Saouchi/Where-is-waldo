@@ -8,6 +8,7 @@ const ModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   padding: 16px;
   border-radius: 16px;
+  box-shadow: 13px 6px 11px 0px rgba(0, 0, 0, 0.5);
 `;
 
 const Modal = ({ children }) => {

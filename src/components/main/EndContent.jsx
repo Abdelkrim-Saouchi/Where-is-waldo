@@ -1,18 +1,17 @@
-import { styled } from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-`;
+import ModalHeader from './ModalHeader';
+import Wrapper from './Wrapper';
+import ModalPara from './ModalPara';
+import Button from './Button';
+import UserNameInput from './UserNameInput';
 
 const EndContent = ({ setIsEnd }) => {
   return (
     <Wrapper>
-      <h2>You Finished The Game in 4:00</h2>
-      <p>Enter your User name to save your score on Leaderboard</p>
-      <input type="text" placeholder="USERNAME" />
+      <ModalHeader>You Finished The Game in 4:00</ModalHeader>
+      <ModalPara>
+        Enter your User name to save your score on Leaderboard
+      </ModalPara>
+      <UserNameInput type="text" placeholder="USERNAME" />
       <h3>Scores Rank</h3>
       <div>
         <ul>
@@ -23,7 +22,7 @@ const EndContent = ({ setIsEnd }) => {
           <li>David Beckham</li>
         </ul>
       </div>
-      <button onClick={() => setIsEnd((prev) => !prev)}>Restart</button>
+      <Button onClick={() => setIsEnd((prev) => !prev)}>Restart</Button>
     </Wrapper>
   );
 };

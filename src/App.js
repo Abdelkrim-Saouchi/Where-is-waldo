@@ -8,8 +8,8 @@ import StartContent from './components/main/StartContent';
 import EndContent from './components/main/EndContent';
 
 function App() {
-  const [isStarting, setIsStarting] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
+  const [isStarting, setIsStarting] = useState(false);
+  const [isEnd, setIsEnd] = useState(true);
 
   return (
     <>

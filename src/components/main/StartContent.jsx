@@ -1,19 +1,16 @@
-import { styled } from 'styled-components';
 import CharList from '../header/CharList';
+import Wrapper from './Wrapper';
+import ModalHeader from './ModalHeader';
+import ModalPara from './ModalPara';
+import Button from './Button';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-`;
 const StartContent = ({ setIsStarting }) => {
   return (
     <Wrapper>
-      <h2>Welcome to The Game</h2>
-      <p>Find these Characters as quick as possible</p>
+      <ModalHeader>Welcome to The Game</ModalHeader>
+      <ModalPara>Find these Characters as quick as possible</ModalPara>
       <CharList />
-      <button onClick={() => setIsStarting((prev) => !prev)}>Start</button>
+      <Button onClick={() => setIsStarting((prev) => !prev)}>Start</Button>
     </Wrapper>
   );
 };

@@ -15,6 +15,7 @@ const StyledCharCard = styled(CharCard)`
   flex-direction: column;
   algin-center: center;
   width: 60px;
+  opacity: ${(props) => (props.found ? '0.5' : '1')};
   & img {
     width: 100%;
     height: 44px;

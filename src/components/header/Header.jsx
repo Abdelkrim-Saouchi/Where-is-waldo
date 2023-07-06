@@ -11,11 +11,11 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 `;
 
-const Header = () => {
+const Header = (props) => {
   return (
     <StyledHeader>
       <StyledLogo />
-      <CharList />
+      <CharList {...props} />
       <Timer />
     </StyledHeader>
   );

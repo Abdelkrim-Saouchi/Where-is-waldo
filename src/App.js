@@ -39,7 +39,7 @@ function App() {
     <>
       <GlobalStyle />
       <div className="App">
-        <Header />
+        <Header Waldo={Waldo} Wizard={Wizard} Odlaw={Odlaw} />
         <Main
           Waldo={Waldo}
           Wizard={Wizard}

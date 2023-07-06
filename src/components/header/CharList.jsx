@@ -11,17 +11,17 @@ const StyledUL = styled.ul`
   list-style: none;
 `;
 
-const CharList = () => {
+const CharList = ({ Waldo, Wizard, Odlaw }) => {
   return (
     <StyledUL>
       <li>
-        <StyledCharCard name="Waldo" imgSrc={waldoImg} />
+        <StyledCharCard name="Waldo" imgSrc={waldoImg} found={Waldo.found} />
       </li>
       <li>
-        <StyledCharCard name="Wizard" imgSrc={wizardImg} />
+        <StyledCharCard name="Wizard" imgSrc={wizardImg} found={Wizard.found} />
       </li>
       <li>
-        <StyledCharCard name="Odlaw" imgSrc={odlawImg} />
+        <StyledCharCard name="Odlaw" imgSrc={odlawImg} found={Odlaw.found} />
       </li>
     </StyledUL>
   );

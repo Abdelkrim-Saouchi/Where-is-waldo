@@ -34,18 +34,53 @@ function App() {
     maxY: 1095,
     found: false,
   });
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  useEffect(() => {
+    let intervalId;
+    if (isRunning) {
+      intervalId = setInterval(() => setTime(time + 1), 10);
+    }
+    return () => clearInterval(intervalId);
+  }, [isRunning, time]);
 
   useEffect(() => {
     if (Waldo.found && Wizard.found && Odlaw.found) {
       setIsEnd(true);
+      setIsRunning((prev) => !prev);
     }
   }, [Waldo.found, Wizard.found, Odlaw.found]);
+
+  const hours = Math.floor(time / 360000);
+
+  const minutes = Math.floor((time % 360000) / 6000);
+
+  const seconds = Math.floor((time % 6000) / 100);
+
+  const milliseconds = time % 100;
+
+  const startStopTimer = () => {
+    setIsRunning((prev) => !prev);
+  };
+
+  const resetTimer = () => {
+    setTime(0);
+  };
 
   return (
     <>
       <GlobalStyle />
       <div className="App">
-        <Header Waldo={Waldo} Wizard={Wizard} Odlaw={Odlaw} />
+        <Header
+          Waldo={Waldo}
+          Wizard={Wizard}
+          Odlaw={Odlaw}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          milliseconds={milliseconds}
+        />
         <Main
           Waldo={Waldo}
           Wizard={Wizard}
@@ -56,12 +91,23 @@ function App() {
         />
         {isStarting && (
           <Modal>
-            <StartContent setIsStarting={setIsStarting} />
+            <StartContent
+              setIsStarting={setIsStarting}
+              startStopTimer={startStopTimer}
+            />
           </Modal>
         )}
         {isEnd && (
           <Modal>
-            <EndContent setIsEnd={setIsEnd} />
+            <EndContent
+              setIsEnd={setIsEnd}
+              startStopTimer={startStopTimer}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+              milliseconds={milliseconds}
+              resetTimer={resetTimer}
+            />
           </Modal>
         )}
       </div>

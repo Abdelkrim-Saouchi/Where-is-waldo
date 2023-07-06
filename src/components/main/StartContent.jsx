@@ -4,7 +4,7 @@ import ModalHeader from './ModalHeader';
 import ModalPara from './ModalPara';
 import Button from './Button';
 
-const StartContent = ({ setIsStarting }) => {
+const StartContent = ({ setIsStarting, startStopTimer }) => {
   return (
     <Wrapper>
       <ModalHeader>Welcome to The Game</ModalHeader>
@@ -14,7 +14,14 @@ const StartContent = ({ setIsStarting }) => {
         Wizard={{ found: false }}
         Odlaw={{ found: false }}
       />
-      <Button onClick={() => setIsStarting((prev) => !prev)}>Start</Button>
+      <Button
+        onClick={() => {
+          setIsStarting((prev) => !prev);
+          startStopTimer();
+        }}
+      >
+        Start
+      </Button>
     </Wrapper>
   );
 };

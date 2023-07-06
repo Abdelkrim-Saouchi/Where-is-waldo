@@ -3,6 +3,7 @@ import bgImg from '../../assets/bg-image.jpg';
 import TargetingBox from './TargetingBox';
 import { useState } from 'react';
 import SuggestingList from './SuggestingList';
+import StyledMark from './Mark';
 
 const StyledMain = styled.main`
   width: 1200px;
@@ -47,6 +48,30 @@ const Main = (props) => {
             setIsVisible={setIsVisible}
           />
         </>
+      )}
+      {props.Waldo.found && (
+        <StyledMark
+          $position={{
+            x: (props.Waldo.maxX + props.Waldo.minX) / 2,
+            y: (props.Waldo.maxY + props.Waldo.minY) / 2,
+          }}
+        />
+      )}
+      {props.Wizard.found && (
+        <StyledMark
+          $position={{
+            x: (props.Wizard.maxX + props.Wizard.minX) / 2,
+            y: (props.Wizard.maxY + props.Wizard.minY) / 2,
+          }}
+        />
+      )}
+      {props.Odlaw.found && (
+        <StyledMark
+          $position={{
+            x: (props.Odlaw.maxX + props.Odlaw.minX) / 2,
+            y: (props.Odlaw.maxY + props.Odlaw.minY) / 2,
+          }}
+        />
       )}
     </StyledMain>
   );

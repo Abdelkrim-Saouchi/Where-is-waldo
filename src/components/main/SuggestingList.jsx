@@ -21,7 +21,16 @@ const StyledUL = styled.ul`
   }
 `;
 
-const SuggestingList = ({ position, Waldo, Wizard, Odwald, setIsVisible }) => {
+const SuggestingList = ({
+  position,
+  Waldo,
+  Wizard,
+  Odlaw,
+  setIsVisible,
+  setWaldo,
+  setWizard,
+  setOdlaw,
+}) => {
   const newPosition = { x: position.x + 30, y: position.y };
 
   const CheckCharacter = (e) => {
@@ -30,16 +39,19 @@ const SuggestingList = ({ position, Waldo, Wizard, Odwald, setIsVisible }) => {
       checkCoordinates(position, Waldo)
     ) {
       console.log('You found Waldo!');
+      setWaldo({ ...Waldo, found: true });
     } else if (
       e.target.textContent === Wizard.name &&
       checkCoordinates(position, Wizard)
     ) {
       console.log('You found Wizard!');
+      setWizard({ ...Wizard, found: true });
     } else if (
-      e.target.textContent === Odwald.name &&
-      checkCoordinates(position, Odwald)
+      e.target.textContent === Odlaw.name &&
+      checkCoordinates(position, Odlaw)
     ) {
-      console.log('You found Odwald!');
+      console.log('You found Odlaw!');
+      setOdlaw({ ...Odlaw, found: true });
     } else {
       console.log('Keep searching!');
     }
@@ -69,7 +81,7 @@ const SuggestingList = ({ position, Waldo, Wizard, Odwald, setIsVisible }) => {
           setIsVisible((prev) => !prev);
         }}
       >
-        Odwald
+        Odlaw
       </li>
     </StyledUL>
   );

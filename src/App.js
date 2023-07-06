@@ -26,8 +26,8 @@ function App() {
     maxY: 1445,
     found: false,
   });
-  const [Odwald, setOdwald] = useState({
-    name: 'Odwald',
+  const [Odlaw, setOdlaw] = useState({
+    name: 'Odlaw',
     minX: 355,
     maxX: 405,
     minY: 1030,
@@ -40,7 +40,14 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <Header />
-        <Main Waldo={Waldo} Wizard={Wizard} Odwald={Odwald} />
+        <Main
+          Waldo={Waldo}
+          Wizard={Wizard}
+          Odlaw={Odlaw}
+          setWaldo={setWaldo}
+          setWizard={setWizard}
+          setOdlaw={setOdlaw}
+        />
         {isStarting && (
           <Modal>
             <StartContent setIsStarting={setIsStarting} />

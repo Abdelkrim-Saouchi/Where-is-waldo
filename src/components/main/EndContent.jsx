@@ -4,22 +4,10 @@ import ModalPara from './ModalPara';
 import Button from './Button';
 import UserNameInput from './UserNameInput';
 
-const EndContent = ({
-  setIsEnd,
-  startStopTimer,
-  hours,
-  minutes,
-  seconds,
-  milliseconds,
-  resetTimer,
-}) => {
+const EndContent = ({ timeFormat, restartGame }) => {
   return (
     <Wrapper>
-      <ModalHeader>
-        You Finished The Game in {hours}:{minutes.toString().padStart(2, '0')}:
-        {seconds.toString().padStart(2, '0')}:
-        {milliseconds.toString().padStart(2, '0')}
-      </ModalHeader>
+      <ModalHeader>You Finished The Game in {timeFormat}</ModalHeader>
       <ModalPara>
         Enter your User name to save your score on Leaderboard
       </ModalPara>
@@ -36,9 +24,7 @@ const EndContent = ({
       </div>
       <Button
         onClick={() => {
-          setIsEnd((prev) => !prev);
-          startStopTimer();
-          resetTimer();
+          restartGame();
         }}
       >
         Restart

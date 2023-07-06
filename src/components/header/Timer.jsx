@@ -1,11 +1,5 @@
-const Timer = ({ hours, minutes, seconds, milliseconds }) => {
-  return (
-    <div>
-      Time: {hours}:{minutes.toString().padStart(2, '0')}:
-      {seconds.toString().padStart(2, '0')}:
-      {milliseconds.toString().padStart(2, '0')}
-    </div>
-  );
+const Timer = ({ timeFormat }) => {
+  return <div>Time: {timeFormat}</div>;
 };
 
 export default Timer;

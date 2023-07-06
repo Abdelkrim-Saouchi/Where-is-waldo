@@ -16,12 +16,7 @@ const Header = (props) => {
     <StyledHeader>
       <StyledLogo />
       <CharList {...props} />
-      <Timer
-        hours={props.hours}
-        minutes={props.minutes}
-        seconds={props.seconds}
-        milliseconds={props.milliseconds}
-      />
+      <Timer timeFormat={props.timeFormat} />
     </StyledHeader>
   );
 };

@@ -60,12 +60,25 @@ function App() {
 
   const milliseconds = time % 100;
 
+  const timeFormat = `${hours}:${minutes.toString().padStart(2, '0')}:
+  ${seconds.toString().padStart(2, '0')}:
+  ${milliseconds.toString().padStart(2, '0')}`;
+
   const startStopTimer = () => {
     setIsRunning((prev) => !prev);
   };
 
   const resetTimer = () => {
     setTime(0);
+  };
+
+  const restartGame = () => {
+    setIsStarting(true);
+    setIsEnd(false);
+    setWaldo({ ...Waldo, found: false });
+    setWizard({ ...Wizard, found: false });
+    setOdlaw({ ...Odlaw, found: false });
+    resetTimer();
   };
 
   return (
@@ -76,10 +89,7 @@ function App() {
           Waldo={Waldo}
           Wizard={Wizard}
           Odlaw={Odlaw}
-          hours={hours}
-          minutes={minutes}
-          seconds={seconds}
-          milliseconds={milliseconds}
+          timeFormat={timeFormat}
         />
         <Main
           Waldo={Waldo}
@@ -99,15 +109,7 @@ function App() {
         )}
         {isEnd && (
           <Modal>
-            <EndContent
-              setIsEnd={setIsEnd}
-              startStopTimer={startStopTimer}
-              hours={hours}
-              minutes={minutes}
-              seconds={seconds}
-              milliseconds={milliseconds}
-              resetTimer={resetTimer}
-            />
+            <EndContent timeFormat={timeFormat} restartGame={restartGame} />
           </Modal>
         )}
       </div>

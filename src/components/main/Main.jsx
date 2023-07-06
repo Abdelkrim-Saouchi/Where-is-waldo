@@ -1,9 +1,10 @@
 import { styled } from 'styled-components';
 import bgImg from '../../assets/bg-image.jpg';
 import TargetingBox from './TargetingBox';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SuggestingList from './SuggestingList';
 import StyledMark from './Mark';
+import { MissedHint, SuccessHint } from '../Hint';
 
 const StyledMain = styled.main`
   width: 1200px;
@@ -20,6 +21,9 @@ const StyledMain = styled.main`
 const Main = (props) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isMissed, setIsMissed] = useState(false);
+  const [hintMsg, setHintMsg] = useState('');
 
   const recalculatePosition = (e) => {
     const rect = e.target.getBoundingClientRect();
@@ -28,6 +32,13 @@ const Main = (props) => {
     console.log(`x:${x}, y:${y}`);
     setPosition({ x: x, y: y });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsSuccess(false);
+      setIsMissed(false);
+    }, 2000);
+  }, [isMissed, isSuccess]);
 
   return (
     <StyledMain>
@@ -46,6 +57,9 @@ const Main = (props) => {
             position={position}
             {...props}
             setIsVisible={setIsVisible}
+            setIsSuccess={setIsSuccess}
+            setIsMissed={setIsMissed}
+            setHintMsg={setHintMsg}
           />
         </>
       )}
@@ -73,6 +87,8 @@ const Main = (props) => {
           }}
         />
       )}
+      {isSuccess && <SuccessHint text={hintMsg} />}
+      {isMissed && <MissedHint text={hintMsg} />}
     </StyledMain>
   );
 };

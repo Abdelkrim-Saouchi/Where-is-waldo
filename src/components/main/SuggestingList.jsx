@@ -30,6 +30,9 @@ const SuggestingList = ({
   setWaldo,
   setWizard,
   setOdlaw,
+  setIsSuccess,
+  setIsMissed,
+  setHintMsg,
 }) => {
   const newPosition = { x: position.x + 30, y: position.y };
 
@@ -40,20 +43,28 @@ const SuggestingList = ({
     ) {
       console.log('You found Waldo!');
       setWaldo({ ...Waldo, found: true });
+      setIsSuccess(true);
+      setHintMsg('You found Walod! Bravo!');
     } else if (
       e.target.textContent === Wizard.name &&
       checkCoordinates(position, Wizard)
     ) {
       console.log('You found Wizard!');
       setWizard({ ...Wizard, found: true });
+      setIsSuccess(true);
+      setHintMsg('You found Wizard! Bravo!');
     } else if (
       e.target.textContent === Odlaw.name &&
       checkCoordinates(position, Odlaw)
     ) {
       console.log('You found Odlaw!');
       setOdlaw({ ...Odlaw, found: true });
+      setIsSuccess(true);
+      setHintMsg('You found Odlaw! Bravo!');
     } else {
       console.log('Keep searching!');
+      setIsMissed(true);
+      setHintMsg('Keep Searching!');
     }
   };
 

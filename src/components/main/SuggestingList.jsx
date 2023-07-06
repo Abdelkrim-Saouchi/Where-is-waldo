@@ -34,6 +34,7 @@ const SuggestingList = ({
   setIsMissed,
   setHintMsg,
 }) => {
+  console.log('runs');
   const newPosition = { x: position.x + 30, y: position.y };
 
   const CheckCharacter = (e) => {

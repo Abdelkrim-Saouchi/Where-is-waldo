@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const CharCard = ({ className, name, imgSrc }) => {
+const CharCard = ({ className, name, imgSrc, isFound }) => {
   return (
     <div className={className}>
       <img src={imgSrc} alt="character img" />
@@ -15,7 +15,7 @@ const StyledCharCard = styled(CharCard)`
   flex-direction: column;
   algin-center: center;
   width: 60px;
-  opacity: ${(props) => (props.found ? '0.5' : '1')};
+  opacity: ${(props) => (props.isFound ? '0.5' : '1')};
   & img {
     width: 100%;
     height: 44px;

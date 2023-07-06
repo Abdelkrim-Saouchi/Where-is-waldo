@@ -9,7 +9,11 @@ const StartContent = ({ setIsStarting }) => {
     <Wrapper>
       <ModalHeader>Welcome to The Game</ModalHeader>
       <ModalPara>Find these Characters as quick as possible</ModalPara>
-      <CharList />
+      <CharList
+        Waldo={{ found: false }}
+        Wizard={{ found: false }}
+        Odlaw={{ found: false }}
+      />
       <Button onClick={() => setIsStarting((prev) => !prev)}>Start</Button>
     </Wrapper>
   );

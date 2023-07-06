@@ -15,13 +15,17 @@ const CharList = ({ Waldo, Wizard, Odlaw }) => {
   return (
     <StyledUL>
       <li>
-        <StyledCharCard name="Waldo" imgSrc={waldoImg} found={Waldo.found} />
+        <StyledCharCard name="Waldo" imgSrc={waldoImg} isFound={Waldo.found} />
       </li>
       <li>
-        <StyledCharCard name="Wizard" imgSrc={wizardImg} found={Wizard.found} />
+        <StyledCharCard
+          name="Wizard"
+          imgSrc={wizardImg}
+          isFound={Wizard.found}
+        />
       </li>
       <li>
-        <StyledCharCard name="Odlaw" imgSrc={odlawImg} found={Odlaw.found} />
+        <StyledCharCard name="Odlaw" imgSrc={odlawImg} isFound={Odlaw.found} />
       </li>
     </StyledUL>
   );

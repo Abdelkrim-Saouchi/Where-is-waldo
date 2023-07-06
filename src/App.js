@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import GlobalStyle from './GlobalStyle';
 import Header from './components/header/Header';
@@ -8,8 +8,8 @@ import StartContent from './components/main/StartContent';
 import EndContent from './components/main/EndContent';
 
 function App() {
-  const [isStarting, setIsStarting] = useState(false);
-  const [isEnd, setIsEnd] = useState(true);
+  const [isStarting, setIsStarting] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
   const [Waldo, setWaldo] = useState({
     name: 'Waldo',
     minX: 683,
@@ -34,6 +34,12 @@ function App() {
     maxY: 1095,
     found: false,
   });
+
+  useEffect(() => {
+    if (Waldo.found && Wizard.found && Odlaw.found) {
+      setIsEnd(true);
+    }
+  }, [Waldo.found, Wizard.found, Odlaw.found]);
 
   return (
     <>

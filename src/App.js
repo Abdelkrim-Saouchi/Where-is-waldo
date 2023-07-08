@@ -6,34 +6,16 @@ import Main from './components/main/Main';
 import Modal from './components/main/Modal';
 import StartContent from './components/main/StartContent';
 import EndContent from './components/main/EndContent';
+import { useCharacter } from './util/useCharacter';
 
 function App() {
   const [isStarting, setIsStarting] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const [Waldo, setWaldo] = useState({
-    name: 'Waldo',
-    minX: 683,
-    maxX: 730,
-    minY: 156,
-    maxY: 228,
-    found: false,
-  });
-  const [Wizard, setWizard] = useState({
-    name: 'Wizard',
-    minX: 863,
-    maxX: 910,
-    minY: 1400,
-    maxY: 1445,
-    found: false,
-  });
-  const [Odlaw, setOdlaw] = useState({
-    name: 'Odlaw',
-    minX: 355,
-    maxX: 405,
-    minY: 1030,
-    maxY: 1095,
-    found: false,
-  });
+
+  const [Waldo, setWaldo] = useCharacter('waldo');
+  const [Wizard, setWizard] = useCharacter('wizard');
+  const [Odlaw, setOdlaw] = useCharacter('odlaw');
+
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 

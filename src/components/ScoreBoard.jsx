@@ -23,16 +23,22 @@ const ScoreBoard = ({ scores }) => {
   return (
     <Wrapper>
       <StyledTable>
-        <StyledRow>
-          <th>Rank</th> <th>Name</th>
-          <th>Time</th>
-        </StyledRow>
-        {scores.map((score, index) => (
-          <StyledRow key={score.id}>
-            <td>{index + 1}</td>
-            <td>{score.user}</td> <td>{timeFormatter(score.timeInSec)}</td>
+        <thead>
+          <StyledRow>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Time</th>
           </StyledRow>
-        ))}
+        </thead>
+        <tbody>
+          {scores.map((score, index) => (
+            <StyledRow key={score.id}>
+              <td>{index + 1}</td>
+              <td>{score.user}</td>
+              <td>{timeFormatter(score.timeInSec)}</td>
+            </StyledRow>
+          ))}
+        </tbody>
       </StyledTable>
     </Wrapper>
   );

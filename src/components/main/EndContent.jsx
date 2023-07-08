@@ -7,11 +7,14 @@ import { useEffect, useState } from 'react';
 import { collection, doc, getDocs, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import ScoreBoard from '../ScoreBoard';
+import { sortArray } from '../../util/sortArray';
+import NameErrorMsg from './NameErrorMsg';
 
 const EndContent = ({ timeFormat, restartGame, time }) => {
   const [userName, setUserName] = useState('');
   const [saved, setSaved] = useState(false);
   const [scores, setScores] = useState([]);
+  const [available, setAvailable] = useState(true);
 
   useEffect(() => {
     const getScores = async () => {
@@ -21,8 +24,8 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
         snap.forEach((doc) => {
           userScores.push({ id: doc.id, ...doc.data() });
         });
-
-        setScores(userScores);
+        const sortedUserScores = sortArray(userScores);
+        setScores(sortedUserScores);
       } catch (error) {
         console.error(error);
       }
@@ -31,6 +34,7 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
   }, [saved]);
 
   const saveUserScore = async () => {
+    if (userName === '') return;
     try {
       await setDoc(doc(db, 'scores', userName), {
         user: userName,
@@ -39,6 +43,21 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
       setSaved(true);
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  const isUserNameAvailable = (name) => {
+    console.log('check scores:', scores);
+    return !scores.some((score) => score.user === name);
+  };
+
+  const checkUserNameAvailability = (name) => {
+    if (isUserNameAvailable(name)) {
+      console.log('name available');
+      setAvailable(true);
+    } else {
+      console.log('name not available');
+      setAvailable(false);
     }
   };
 
@@ -51,13 +70,17 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
       <UserNameInput
         type="text"
         placeholder="USERNAME"
-        onChange={(e) => setUserName(e.target.value)}
+        onChange={(e) => {
+          setUserName(e.target.value);
+          checkUserNameAvailability(e.target.value);
+        }}
         value={userName}
       />
+      {!available && <NameErrorMsg />}
       {saved ? (
         <Button>Saved</Button>
       ) : (
-        <Button onClick={saveUserScore}>Save</Button>
+        available && <Button onClick={saveUserScore}>Save</Button>
       )}
       <h3>Scores Rank</h3>
       <ScoreBoard scores={scores} />

@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { timeFormatter } from '../util/timeFormatter';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const ScoreBoard = ({ scores }) => {
         {scores.map((score, index) => (
           <StyledRow key={score.id}>
             <td>{index + 1}</td>
-            <td>{score.user}</td> <td>{score.timeInSec}</td>
+            <td>{score.user}</td> <td>{timeFormatter(score.timeInSec)}</td>
           </StyledRow>
         ))}
       </StyledTable>

@@ -7,6 +7,7 @@ import Modal from './components/main/Modal';
 import StartContent from './components/main/StartContent';
 import EndContent from './components/main/EndContent';
 import { useCharacter } from './util/useCharacter';
+import { timeFormatter } from './util/timeFormatter';
 
 function App() {
   const [isStarting, setIsStarting] = useState(true);
@@ -18,6 +19,7 @@ function App() {
 
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const timeFormat = timeFormatter(time);
 
   useEffect(() => {
     let intervalId;
@@ -33,18 +35,6 @@ function App() {
       setIsRunning((prev) => !prev);
     }
   }, [Waldo.found, Wizard.found, Odlaw.found]);
-
-  const hours = Math.floor(time / 360000);
-
-  const minutes = Math.floor((time % 360000) / 6000);
-
-  const seconds = Math.floor((time % 6000) / 100);
-
-  const milliseconds = time % 100;
-
-  const timeFormat = `${hours}:${minutes.toString().padStart(2, '0')}:
-  ${seconds.toString().padStart(2, '0')}:
-  ${milliseconds.toString().padStart(2, '0')}`;
 
   const startStopTimer = () => {
     setIsRunning((prev) => !prev);

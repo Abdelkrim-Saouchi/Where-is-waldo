@@ -91,7 +91,11 @@ function App() {
         )}
         {isEnd && (
           <Modal>
-            <EndContent timeFormat={timeFormat} restartGame={restartGame} />
+            <EndContent
+              timeFormat={timeFormat}
+              restartGame={restartGame}
+              time={time}
+            />
           </Modal>
         )}
       </div>

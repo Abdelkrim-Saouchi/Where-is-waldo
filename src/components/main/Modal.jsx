@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 const ModalWrapper = styled.div`
+  width: 600px;
   background-color: #e9e9e6;
   position: fixed;
   top: 50%;

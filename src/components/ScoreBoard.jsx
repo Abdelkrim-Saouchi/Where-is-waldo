@@ -3,6 +3,8 @@ import { timeFormatter } from '../util/timeFormatter';
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 250px;
+  overflow: scroll;
 `;
 
 const StyledTable = styled.table`

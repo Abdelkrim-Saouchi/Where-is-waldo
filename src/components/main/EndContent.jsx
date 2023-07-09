@@ -16,6 +16,7 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
   const [scores, setScores] = useState([]);
   const [available, setAvailable] = useState(true);
 
+  // fetch users' scores form firestore
   useEffect(() => {
     const getScores = async () => {
       try {

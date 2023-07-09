@@ -9,6 +9,8 @@ const StartContent = ({ setIsStarting, startStopTimer }) => {
     <Wrapper>
       <ModalHeader>Welcome to The Game</ModalHeader>
       <ModalPara>Find these Characters as quick as possible</ModalPara>
+
+      {/* I used {found:false} to fix undefined props error */}
       <CharList
         Waldo={{ found: false }}
         Wizard={{ found: false }}

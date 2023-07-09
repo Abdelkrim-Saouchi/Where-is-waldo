@@ -15,7 +15,7 @@ const CharList = ({ Waldo, Wizard, Odlaw }) => {
   return (
     <StyledUL>
       <li>
-        <StyledCharCard name="Waldo" imgSrc={waldoImg} isFound={Waldo.found} />
+        <StyledCharCard name="Waldo" imgSrc={waldoImg} $isFound={Waldo.found} />
       </li>
       <li>
         <StyledCharCard
@@ -25,7 +25,7 @@ const CharList = ({ Waldo, Wizard, Odlaw }) => {
         />
       </li>
       <li>
-        <StyledCharCard name="Odlaw" imgSrc={odlawImg} isFound={Odlaw.found} />
+        <StyledCharCard name="Odlaw" imgSrc={odlawImg} $isFound={Odlaw.found} />
       </li>
     </StyledUL>
   );

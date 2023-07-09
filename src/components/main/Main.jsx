@@ -20,8 +20,11 @@ const StyledMain = styled.main`
 
 // used memo here to prevent unnecessary rerendering of Main if time changed in the parent component
 const Main = memo((props) => {
+  // current position of user click on image
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  // state to display user targeting mark and character list
   const [isVisible, setIsVisible] = useState(false);
+  // states for user hint feedback
   const [isSuccess, setIsSuccess] = useState(false);
   const [isMissed, setIsMissed] = useState(false);
   const [hintMsg, setHintMsg] = useState('');
@@ -33,12 +36,19 @@ const Main = memo((props) => {
     setPosition({ x: x, y: y });
   };
 
+  // makes SuccessHint disappear after 2 seconds
   useEffect(() => {
     setTimeout(() => {
       setIsSuccess(false);
+    }, 2000);
+  }, [isSuccess]);
+
+  // makes MissedHint disappear after 2 seconds
+  useEffect(() => {
+    setTimeout(() => {
       setIsMissed(false);
     }, 2000);
-  }, [isMissed, isSuccess]);
+  }, [isMissed]);
 
   return (
     <StyledMain>

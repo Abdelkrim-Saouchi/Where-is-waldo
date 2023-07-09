@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import GlobalStyle from './GlobalStyle';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
@@ -10,17 +9,21 @@ import { useCharacter } from './util/useCharacter';
 import { timeFormatter } from './util/timeFormatter';
 
 function App() {
+  // states to switch between start and end game
   const [isStarting, setIsStarting] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
+  // importing character from firestore using custom hook
   const [Waldo, setWaldo] = useCharacter('waldo');
   const [Wizard, setWizard] = useCharacter('wizard');
   const [Odlaw, setOdlaw] = useCharacter('odlaw');
 
+  // states for timer
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const timeFormat = timeFormatter(time);
 
+  // timer function
   useEffect(() => {
     let intervalId;
     if (isRunning) {
@@ -29,6 +32,7 @@ function App() {
     return () => clearInterval(intervalId);
   }, [isRunning, time]);
 
+  // triggers game end if all character found and stop timer
   useEffect(() => {
     if (Waldo.found && Wizard.found && Odlaw.found) {
       setIsEnd(true);

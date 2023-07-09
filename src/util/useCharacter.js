@@ -10,10 +10,9 @@ export const useCharacter = (docId) => {
       const docRef = doc(db, 'characters', docId);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        console.log('Document:', docSnap.data());
         setCharacter(docSnap.data());
       } else {
-        console.log('Document not found');
+        throw new Error('Document Not found in firestore!');
       }
     };
     fetchData();

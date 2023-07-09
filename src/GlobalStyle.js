@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&family=Tangerine:wght@400;700&display=swap');    
-    
     *,
     *::before,
     *::after {
@@ -12,13 +10,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        --bg-color: #360568;
-        --secondary-color: #5B2A86;
-        --accent-color: #A5E6BA;
+        --bg-color: #F5F5F5;
+        --Main-Text-Color: #000000;
+        --Secondary-Text-Color: #333333;
+        --Tertiary-Text-Color: #999999;
+        
     }
 
     body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--Main-Text-Color);
     }
     
     .App {

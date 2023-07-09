@@ -9,6 +9,8 @@ const Logo = ({ className }) => {
 };
 
 const StyledLogo = styled(Logo)`
+  font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
   span {
     color: red;
   }

@@ -4,6 +4,7 @@ import StyledLogo from './Logo';
 import Timer from './Timer';
 
 const StyledHeader = styled.header`
+  background-color: #f7f7f7;
   width: 1200px;
   margin: auto;
   display: flex;

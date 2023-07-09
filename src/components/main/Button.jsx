@@ -4,11 +4,13 @@ const Button = styled.button`
   border: 1px solid transparent;
   padding: 8px 16px;
   font-weight: bold;
-  background-color: #fffdd0;
+  font-family: inherit;
+  background-color: #808080;
+  color: #ffffff;
   border-radius: 12px;
   cursor: pointer;
   &:is(:hover, :focus) {
-    opacity: 0.7;
+    background-color: #555555;
     border: 1px solid black;
   }
 `;

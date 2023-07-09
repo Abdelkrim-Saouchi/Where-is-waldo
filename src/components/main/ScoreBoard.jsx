@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { timeFormatter } from '../util/timeFormatter';
+import { timeFormatter } from '../../util/timeFormatter';
 
 const Wrapper = styled.div`
   width: 100%;

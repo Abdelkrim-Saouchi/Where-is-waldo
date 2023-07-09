@@ -6,7 +6,7 @@ import UserNameInput from './UserNameInput';
 import { useEffect, useState } from 'react';
 import { collection, doc, getDocs, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
-import ScoreBoard from '../ScoreBoard';
+import ScoreBoard from './ScoreBoard';
 import { sortArray } from '../../util/sortArray';
 import NameErrorMsg from './NameErrorMsg';
 

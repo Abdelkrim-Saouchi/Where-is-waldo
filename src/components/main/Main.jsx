@@ -4,7 +4,7 @@ import TargetingBox from './TargetingBox';
 import { memo, useEffect, useState } from 'react';
 import SuggestingList from './SuggestingList';
 import StyledMark from './Mark';
-import { MissedHint, SuccessHint } from '../Hint';
+import { MissedHint, SuccessHint } from './Hint';
 
 const StyledMain = styled.main`
   width: 1200px;

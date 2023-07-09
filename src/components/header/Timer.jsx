@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  font-family: 'Bangers', cursive;
-  letter-spacing: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   & span {
     color: red;
   }

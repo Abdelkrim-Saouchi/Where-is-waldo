@@ -9,15 +9,18 @@ const StyledUL = styled.ul`
   position: absolute;
   top: ${(props) => props.$position.y}px;
   left: ${(props) => props.$position.x}px;
-  background-color: #e9e9e6;
-  padding: 8px 16px;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 8px 8px;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
   border-radius: 8px;
   cursor: pointer;
   & li {
     padding: 4px 8px;
   }
   & li:is(:hover, :focus) {
-    background-color: #fffdd0;
+    background-color: #555555;
   }
 `;
 

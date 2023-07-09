@@ -61,7 +61,9 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
 
   return (
     <Wrapper>
-      <ModalHeader>You Finished The Game in {timeFormat}</ModalHeader>
+      <ModalHeader>
+        You Finished The Game in <span>{timeFormat}</span>
+      </ModalHeader>
       <ModalPara>
         Enter your User name to save your score on Leaderboard
       </ModalPara>

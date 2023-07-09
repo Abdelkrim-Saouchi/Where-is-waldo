@@ -5,6 +5,8 @@ const UserNameInput = styled.input`
   height: 30px;
   padding-left: 8px;
   outline-color: blue;
+  font-family: inherit;
+  font-weight: 700;
 `;
 
 export default UserNameInput;

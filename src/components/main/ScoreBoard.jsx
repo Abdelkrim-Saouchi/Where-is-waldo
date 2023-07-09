@@ -9,11 +9,14 @@ const Wrapper = styled.div`
 
 const StyledTable = styled.table`
   width: 100%;
+  font-family: inherit;
 `;
 
 const StyledRow = styled.tr`
   background-color: white;
   & * {
+    font-family: inherit;
+    font-weight: 700;
     text-align: left;
     padding: 8px;
   }

@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import CharList from './CharList';
 import StyledLogo from './Logo';
 import Timer from './Timer';

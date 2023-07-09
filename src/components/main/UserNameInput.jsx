@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const UserNameInput = styled.input`
   align-self: stretch;

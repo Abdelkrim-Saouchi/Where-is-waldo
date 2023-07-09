@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const TargetingBox = styled.div`
   width: 50px;

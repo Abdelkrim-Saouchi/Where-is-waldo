@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const ModalWrapper = styled.div`
   width: 600px;

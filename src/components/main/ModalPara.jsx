@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const ModalPara = styled.p`
   opacity: 0.8;

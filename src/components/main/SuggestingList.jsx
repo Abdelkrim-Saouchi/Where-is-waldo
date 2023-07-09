@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { checkCoordinates } from '../../util/checkCoordinates';
 
 const StyledUL = styled.ul`

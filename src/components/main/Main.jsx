@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import bgImg from '../../assets/bg-image.jpg';
 import TargetingBox from './TargetingBox';
 import { memo, useEffect, useState } from 'react';

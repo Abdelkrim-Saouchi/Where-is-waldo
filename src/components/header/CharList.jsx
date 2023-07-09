@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import StyledCharCard from './CharCard';
 import waldoImg from '../../assets/waldo.jpg';
 import wizardImg from '../../assets/wizard.jpg';

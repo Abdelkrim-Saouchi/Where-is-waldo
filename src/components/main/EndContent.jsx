@@ -47,16 +47,13 @@ const EndContent = ({ timeFormat, restartGame, time }) => {
   };
 
   const isUserNameAvailable = (name) => {
-    console.log('check scores:', scores);
     return !scores.some((score) => score.user === name);
   };
 
   const checkUserNameAvailability = (name) => {
     if (isUserNameAvailable(name)) {
-      console.log('name available');
       setAvailable(true);
     } else {
-      console.log('name not available');
       setAvailable(false);
     }
   };

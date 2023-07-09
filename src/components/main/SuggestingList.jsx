@@ -34,7 +34,6 @@ const SuggestingList = ({
   setIsMissed,
   setHintMsg,
 }) => {
-  console.log('runs');
   const newPosition = { x: position.x + 30, y: position.y };
 
   const CheckCharacter = (e) => {
@@ -42,7 +41,6 @@ const SuggestingList = ({
       e.target.textContent === Waldo.name &&
       checkCoordinates(position, Waldo)
     ) {
-      console.log('You found Waldo!');
       setWaldo({ ...Waldo, found: true });
       setIsSuccess(true);
       setHintMsg('You found Walod! Bravo!');
@@ -50,7 +48,6 @@ const SuggestingList = ({
       e.target.textContent === Wizard.name &&
       checkCoordinates(position, Wizard)
     ) {
-      console.log('You found Wizard!');
       setWizard({ ...Wizard, found: true });
       setIsSuccess(true);
       setHintMsg('You found Wizard! Bravo!');
@@ -58,12 +55,10 @@ const SuggestingList = ({
       e.target.textContent === Odlaw.name &&
       checkCoordinates(position, Odlaw)
     ) {
-      console.log('You found Odlaw!');
       setOdlaw({ ...Odlaw, found: true });
       setIsSuccess(true);
       setHintMsg('You found Odlaw! Bravo!');
     } else {
-      console.log('Keep searching!');
       setIsMissed(true);
       setHintMsg('Keep Searching!');
     }

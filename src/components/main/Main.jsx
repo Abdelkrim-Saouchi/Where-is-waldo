@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import bgImg from '../../assets/bg-image.jpg';
 import TargetingBox from './TargetingBox';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import SuggestingList from './SuggestingList';
 import StyledMark from './Mark';
 import { MissedHint, SuccessHint } from '../Hint';
@@ -18,7 +18,8 @@ const StyledMain = styled.main`
   position: relative;
 `;
 
-const Main = (props) => {
+// used memo here to prevent unnecessary rerendering of Main if time changed in the parent component
+const Main = memo((props) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -91,6 +92,6 @@ const Main = (props) => {
       {isMissed && <MissedHint text={hintMsg} />}
     </StyledMain>
   );
-};
+});
 
 export default Main;

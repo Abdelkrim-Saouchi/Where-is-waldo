@@ -1,0 +1,10 @@
+
+Main color (60%): #360568 (Deep Violet)
+Secondary color (30%): #5B2A86 (KSU Purple)
+Accent color (10%): #A5E6BA (Sea Foam Green)
+For the font style, you could use Tangerine from Google Fonts .
+
+Use the main color (Deep Violet) as the background color for your web app. This will create a visually striking and bold look.
+Use the secondary color (KSU Purple) for elements such as buttons, links, and headings. This will create a cohesive look and help guide the user’s eye to important elements on the page.
+Use the accent color (Sea Foam Green) sparingly to highlight important information or to draw attention to specific elements on the page. For example, you could use this color for a “Start Game” button or for the timer during gameplay.
+For the font style, you can use Tangerine for headings and titles to add a playful and whimsical touch to your web app. For body text, you could use a more legible font such as Open Sans or Roboto.

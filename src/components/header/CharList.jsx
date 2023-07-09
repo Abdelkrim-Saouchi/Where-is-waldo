@@ -21,7 +21,7 @@ const CharList = ({ Waldo, Wizard, Odlaw }) => {
         <StyledCharCard
           name="Wizard"
           imgSrc={wizardImg}
-          isFound={Wizard.found}
+          $isFound={Wizard.found}
         />
       </li>
       <li>

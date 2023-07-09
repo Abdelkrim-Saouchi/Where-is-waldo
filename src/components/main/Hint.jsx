@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   font-weight: bold;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
   padding: 8px 16px;
   border-radius: 12px;
   position: fixed;

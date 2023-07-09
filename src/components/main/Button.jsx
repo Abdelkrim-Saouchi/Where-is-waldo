@@ -4,7 +4,8 @@ const Button = styled.button`
   border: 1px solid transparent;
   padding: 8px 16px;
   font-weight: bold;
-  font-family: inherit;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
   background-color: #808080;
   color: #ffffff;
   border-radius: 12px;

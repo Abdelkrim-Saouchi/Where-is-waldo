@@ -8,11 +8,16 @@ export const useCharacter = (docId) => {
   useEffect(() => {
     const fetchData = async () => {
       const docRef = doc(db, 'characters', docId);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setCharacter(docSnap.data());
-      } else {
-        throw new Error('Document Not found in firestore!');
+      try {
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setCharacter(docSnap.data());
+        } else {
+          throw new Error('Document Not found in firestore!');
+        }
+      } catch (error) {
+        console.log(error);
+        alert('Error: fetch data failed. Refresh page please!');
       }
     };
     fetchData();

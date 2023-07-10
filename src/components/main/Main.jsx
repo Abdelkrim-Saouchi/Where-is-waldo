@@ -5,6 +5,7 @@ import { memo, useEffect, useState } from 'react';
 import SuggestingList from './SuggestingList';
 import StyledMark from './Mark';
 import { MissedHint, SuccessHint } from './Hint';
+import Footer from '../../footer/Footer';
 
 const StyledMain = styled.main`
   width: 1200px;
@@ -99,6 +100,7 @@ const Main = memo((props) => {
       )}
       {isSuccess && <SuccessHint text={hintMsg} />}
       {isMissed && <MissedHint text={hintMsg} />}
+      <Footer />
     </StyledMain>
   );
 });

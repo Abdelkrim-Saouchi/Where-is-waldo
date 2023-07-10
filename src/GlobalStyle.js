@@ -11,10 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
         --bg-color: #F5F5F5;
-        --Main-Text-Color: #000000;
-        --Secondary-Text-Color: #333333;
-        --Tertiary-Text-Color: #999999;
-        
+        --Main-Text-Color: #000000;   
     }
 
     body {
